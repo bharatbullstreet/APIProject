@@ -35,7 +35,6 @@ async function initCluster() {
     puppeteerOptions: {
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      executablePath: './ungoogled-chromium_134.0.6998.116_1.vaapi_linux/chrome',
     },
     timeout: 30000
   });
