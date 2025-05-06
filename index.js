@@ -1,13 +1,12 @@
 const express = require('express');
 const { Cluster } = require('puppeteer-cluster');
 const cors = require('cors');
-// require('dotenv').config();
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
 
-const PORT = 3000;
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const defaultData = {
   seatNo: "",
@@ -34,7 +33,7 @@ async function initCluster() {
     maxConcurrency: 2,
     puppeteerOptions: {
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     },
     timeout: 30000
   });
